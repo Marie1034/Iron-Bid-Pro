@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(250, 12%, 95%);
+  --foreground: hsl(240, 10%, 3.9%);
+  --muted: hsl(240, 4.8%, 95.9%);
+  --muted-foreground: hsl(240, 3.8%, 46.1%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 10%, 3.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 10%, 3.9%);
+  --border: hsl(240, 5.9%, 90%);
+  --input: hsl(240, 5.9%, 90%);
+  --primary: hsl(210, 79%, 46%);
+  --primary-foreground: hsl(210, 100%, 98%);
+  --primary-dark: hsl(210, 79%, 40%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(240, 5.9%, 10%);
+  --accent: hsl(120, 61%, 50%);
+  --accent-foreground: hsl(120, 100%, 98%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5.9%, 10%);
+  --error: hsl(0, 72%, 51%);
+  --warning: hsl(36, 100%, 53%);
+  --surface: hsl(0, 0%, 100%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(210, 79%, 46%);
+  --primary-foreground: hsl(210, 100%, 98%);
+  --primary-dark: hsl(210, 79%, 40%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(120, 61%, 50%);
+  --accent-foreground: hsl(120, 100%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --error: hsl(0, 72%, 51%);
+  --warning: hsl(36, 100%, 53%);
+  --surface: hsl(240, 10%, 3.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .text-primary-dark {
+    color: var(--primary-dark);
+  }
+  
+  .text-secondary {
+    color: var(--secondary);
+  }
+  
+  .text-error {
+    color: var(--error);
+  }
+  
+  .text-warning {
+    color: var(--warning);
+  }
+  
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+  
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  
+  .hover\:bg-primary-dark:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .hover\:text-primary:hover {
+    color: var(--primary);
+  }
+  
+  .hover\:text-primary-dark:hover {
+    color: var(--primary-dark);
+  }
+  
+  .border-primary {
+    border-color: var(--primary);
+  }
+  
+  .hover\:border-primary:hover {
+    border-color: var(--primary);
+  }
+}
+
+@media print {
+  header {
+    display: none !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Remove spinner arrows in number inputs (Chrome, Safari, Edge) */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinner arrows in Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
